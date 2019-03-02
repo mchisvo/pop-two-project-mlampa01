@@ -31,18 +31,19 @@ public class FractionImplTest {
     }
 
     @Test
-    public void hashCode() {
+    public void testHashCode() {
     }
 
     @Test
-    public void equals() {
-    }
-
-    @Test
-    public void clone() {
+    public void testEquals() {
     }
 
     @Test
     public void inverse() {
+    }
+
+    @Test
+    public void testToString() {
+        assertEquals("1", new FractionImpl());
     }
 }

@@ -2,6 +2,10 @@ package fraction;
 
 public class FractionImpl implements Fraction {
     //TODO Add instance variables
+    private int numerator;
+    private int denominator;
+
+
     /**
      * Parameters are the <em>numerator</em> and the <em>denominator</em>.
      * Normalize the fraction as you create it.
@@ -39,6 +43,10 @@ public class FractionImpl implements Fraction {
      */
     public FractionImpl(String fraction) {
         // TODO
+    }
+
+    public FractionImpl() {
+        this(1);
     }
 
     /**
@@ -134,6 +142,6 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public String toString() {
-        return null;
+        return ;
     }
 }
