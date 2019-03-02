@@ -57,6 +57,11 @@ public class FractionImpl implements Fraction {
         this(1);
     }
 
+    public boolean isWholeNumber(){
+        return false;
+
+    }
+
     /**
      * @inheritDoc
      */
