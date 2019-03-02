@@ -5,6 +5,13 @@ public class FractionImpl implements Fraction {
     private int numerator;
     private int denominator;
 
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
+    }
 
     /**
      * Parameters are the <em>numerator</em> and the <em>denominator</em>.
@@ -18,7 +25,8 @@ public class FractionImpl implements Fraction {
      * @param denominator
      */
     public FractionImpl(int numerator, int denominator) {
-        // TODO
+        this.numerator = numerator;
+        this.denominator = denominator;
     }
 
     /**
@@ -27,7 +35,7 @@ public class FractionImpl implements Fraction {
      * @param wholeNumber representing the numerator
      */
     public FractionImpl(int wholeNumber) {
-        // TODO
+        this(wholeNumber, 1);
     }
 
     /**
@@ -142,6 +150,8 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public String toString() {
-        return ;
+        return  (getDenominator() == 1) ?
+                "" + getNumerator() : (getNumerator() + "/" + getDenominator());
     }
+
 }

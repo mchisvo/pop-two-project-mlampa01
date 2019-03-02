@@ -44,6 +44,6 @@ public class FractionImplTest {
 
     @Test
     public void testToString() {
-        assertEquals("1", new FractionImpl());
+        assertEquals("1", new FractionImpl().toString());
     }
 }
