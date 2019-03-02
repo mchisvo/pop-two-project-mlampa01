@@ -60,14 +60,12 @@ public class FractionImpl implements Fraction {
     /**
      * @return
      */
-    public boolean isWholeNumber(String string){
+    public static boolean isWholeNumber(String string){
         //break String into char[]
         char[] charArray = string.toCharArray();
         if(charArray.length == 1){
             return true;
-        }
-        return false;
-
+        }return false;
     }
 
     /**

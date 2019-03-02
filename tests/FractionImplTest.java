@@ -1,10 +1,12 @@
-package fraction;
-
+import fraction.FractionImpl;
+import org.junit.Assert;
 import org.junit.Test;
 
+import static fraction.FractionImpl.isWholeNumber;
 import static org.junit.Assert.*;
 
 public class FractionImplTest {
+    private final static String ONE = "1";
 
     @Test
     public void add() {
@@ -53,11 +55,12 @@ public class FractionImplTest {
 
     @Test
     public void testToString() {
-        assertEquals("1", new FractionImpl().toString());
+        Assert.assertEquals("1", new FractionImpl().toString());
     }
 
     @Test
-    public void testisWholeNumber() {
-        assertEquals(true, is);
+    public void testIsWholeNumber() {
+        FractionImpl myfrac = new FractionImpl(1);
+        assertEquals(true, isWholeNumber("1") );
     }
 }
