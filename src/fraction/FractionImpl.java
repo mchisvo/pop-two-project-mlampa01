@@ -49,8 +49,11 @@ public class FractionImpl implements Fraction {
      *
      * @param fraction the string representation of the fraction
      */
-    public FractionImpl(String fraction) {
+    public FractionImpl(String fraction) throws ArithmeticException, NumberFormatException {
         // TODO
+//        if(isWholeNumber(fraction)){
+//            FractionImpl(Integer.parseInt(fraction));
+//        }
     }
 
     public FractionImpl() {
