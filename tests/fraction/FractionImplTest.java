@@ -57,7 +57,7 @@ public class FractionImplTest {
     }
 
     @Test
-    public void isWholeNumber() {
-        fail();
+    public void testisWholeNumber() {
+        assertEquals(true, is);
     }
 }
