@@ -1,6 +1,7 @@
 package fraction;
 
 public class FractionImpl implements Fraction {
+    //TODO Add instance variables
     /**
      * Parameters are the <em>numerator</em> and the <em>denominator</em>.
      * Normalize the fraction as you create it.
