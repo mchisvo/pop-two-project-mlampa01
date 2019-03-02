@@ -60,7 +60,10 @@ public class FractionImplTest {
 
     @Test
     public void testIsWholeNumber() {
-        FractionImpl myfrac = new FractionImpl(1);
-        assertEquals(true, isWholeNumber("1") );
+        assertTrue(isWholeNumber("1"));
+        assertTrue(isWholeNumber("-100"));
+        assertFalse(isWholeNumber("1/2"));
+        assertFalse(isWholeNumber("-1/2"));
+
     }
 }

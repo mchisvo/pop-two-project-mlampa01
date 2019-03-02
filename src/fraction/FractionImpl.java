@@ -57,13 +57,15 @@ public class FractionImpl implements Fraction {
         this(1);
     }
 
-    /**
+
+    /**Determine whether the number entered is a whole number
+     * @param string
      * @return
      */
     public static boolean isWholeNumber(String string){
         //break String into char[]
-        char[] charArray = string.toCharArray();
-        if(charArray.length == 1){
+        String[] parts = string.split("/");
+        if(parts.length == 1){
             return true;
         }return false;
     }
