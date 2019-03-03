@@ -185,7 +185,13 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if(this == obj) return true;
+        if(!(obj instanceof Fraction)) return false;
+        FractionImpl f = new FractionImpl(obj.toString());
+        if(getNumerator() == f.getNumerator() &&
+                getDenominator() == f.getDenominator()){
+            return true;
+        }else return false;
     }
 
     /**
