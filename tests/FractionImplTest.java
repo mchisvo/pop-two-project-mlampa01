@@ -59,6 +59,11 @@ public class FractionImplTest {
     }
 
     @Test
+    public void testConstructorWithString(){
+
+    }
+
+    @Test
     public void testIsWholeNumber() {
         assertTrue(isWholeNumber("1"));
         assertTrue(isWholeNumber("-100"));

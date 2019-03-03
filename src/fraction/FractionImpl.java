@@ -2,7 +2,7 @@ package fraction;
 
 public class FractionImpl implements Fraction {
     //TODO Add instance variables
-    private int numerator;
+    private  int numerator;
     private int denominator;
 
     public int getNumerator() {
@@ -37,7 +37,9 @@ public class FractionImpl implements Fraction {
     public FractionImpl(int wholeNumber) {
         this(wholeNumber, 1);
     }
-
+    public FractionImpl() {
+        this(1);
+    }
     /**
      * The parameter is a <pre>String</pre> containing either a whole number, such as `5` or `-3`, or a fraction,
      * such as "8/-12".
@@ -51,16 +53,28 @@ public class FractionImpl implements Fraction {
      */
     public FractionImpl(String fraction) throws ArithmeticException, NumberFormatException {
         // TODO
-//        if(isWholeNumber(fraction)){
-//            FractionImpl(Integer.parseInt(fraction));
-//        }
+        int numerator;
+        int denominator;
+        if(isWholeNumber(fraction)){
+            // If we are passed a whole number, set the numerator to whole number and denominator to 1
+            try{
+                Integer.parseInt(fraction);
+            }catch (NumberFormatException nfe){
+                throw new NumberFormatException(fraction + " is not a number");
+            }
+            this.numerator = Integer.parseInt(fraction);
+        }else{
+            // We need to split out the numerator and denominator
+            // and check id denominator is zero, throw necessary exception.
+            String[] parts = fraction.split("/");
+            if(parts[1] == "0"){
+                throw new ArithmeticException("Cannot divide by zero!");
+            }else{
+                numerator = Integer.parseInt(parts[0]);
+                denominator = Integer.parseInt(parts[1]);
+            }
+        }
     }
-
-    public FractionImpl() {
-        this(1);
-    }
-
-
     /**Determine whether the number entered is a whole number
      * @param string
      * @return
@@ -72,6 +86,8 @@ public class FractionImpl implements Fraction {
             return true;
         }return false;
     }
+
+    //public static
 
     /**
      * @inheritDoc
