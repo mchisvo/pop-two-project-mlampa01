@@ -58,8 +58,15 @@ public class FractionImplTest {
         Assert.assertEquals("1", new FractionImpl().toString());
     }
 
+    @Test(expected = ArithmeticException.class)
+    public void divisionByZero(){
+        FractionImpl zeroFrac = new FractionImpl("1/0");
+    }
+
     @Test
     public void testConstructorWithString(){
+        assertEquals("3/4", new FractionImpl("3/4").toString());
+        assertEquals("3/4", new FractionImpl("3/0").toString());
 
     }
 

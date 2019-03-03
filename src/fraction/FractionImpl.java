@@ -67,7 +67,7 @@ public class FractionImpl implements Fraction {
             // We need to split out the numerator and denominator
             // and check id denominator is zero, throw necessary exception.
             String[] parts = fraction.split("/");
-            if(parts[1] == "0"){
+            if(parts[1].equals("0")){
                 throw new ArithmeticException("Cannot divide by zero!");
             }else{
                 numerator = Integer.parseInt(parts[0]);
