@@ -49,8 +49,8 @@ public class FractionImplTest {
 
     @Test
     public void negate() {
-        //TODO
-        fail();
+        assertEquals(thirteenOverfifteen, negativeThirteenOverfifteen.negate());
+
     }
 
     @Test
@@ -61,21 +61,24 @@ public class FractionImplTest {
 
     @Test
     public void testEquals() {
-        //TODO
-        fail();
+        assertFalse(thirteenOverfifteen.equals(negativeThirteenOverfifteen));
+        assertTrue(thirteenOverfifteen.equals(thirteenOverfifteen));
+
+
     }
 
     @Test
     public void inverse() {
-        //TODO
-        fail();
+        assertEquals(new FractionImpl(5),oneFith.inverse());
+        assertEquals(new FractionImpl(3,2),twoThirds.inverse());
+
     }
 
     @Test
     public void testCompareTo() {
         assertEquals(0, twoThirds.compareTo(twoThirds));
-        assertTrue(oneFith.compareTo(twoThirds) < 1);
-        assertTrue(twoThirds.compareTo(oneFith) > 1);
+        assertTrue(oneFith.compareTo(twoThirds) < 0);
+        assertTrue(twoThirds.compareTo(oneFith) > 0);
 
     }
 

@@ -217,9 +217,15 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int compareTo(Fraction o) {
-        // TODO
-//        if(this.subtract(o) < 0)
+        // TODO Found here https://introcs.cs.princeton.edu/java/92symbolic/Rational.java.html
+        // Need to write comments - the side with the highest numerator wins, could convert to a float and test that way too.
+        FractionImpl operand = new FractionImpl(o.toString());
+        int lhs = getNumerator() * operand.getDenominator();
+        int rhs = getDenominator() * operand.getNumerator();
+        if (lhs < rhs) return -1;
+        if (lhs > rhs) return +1;
         return 0;
+
     }
 
     /**
