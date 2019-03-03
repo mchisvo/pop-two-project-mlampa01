@@ -49,22 +49,34 @@ public class FractionImplTest {
 
     @Test
     public void negate() {
+        //TODO
         fail();
     }
 
     @Test
     public void testHashCode() {
+        //TODO
         fail();
     }
 
     @Test
     public void testEquals() {
+        //TODO
         fail();
     }
 
     @Test
     public void inverse() {
+        //TODO
         fail();
+    }
+
+    @Test
+    public void testCompareTo() {
+        assertEquals(0, twoThirds.compareTo(twoThirds));
+        assertTrue(oneFith.compareTo(twoThirds) < 1);
+        assertTrue(twoThirds.compareTo(oneFith) > 1);
+
     }
 
     @Test

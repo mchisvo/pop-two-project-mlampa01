@@ -218,6 +218,7 @@ public class FractionImpl implements Fraction {
     @Override
     public int compareTo(Fraction o) {
         // TODO
+//        if(this.subtract(o) < 0)
         return 0;
     }
 
