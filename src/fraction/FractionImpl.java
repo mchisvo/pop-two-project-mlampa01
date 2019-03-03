@@ -164,7 +164,8 @@ public class FractionImpl implements Fraction {
     @Override
     public Fraction abs() {
         // TODO
-        return null;
+        if(this.numerator < 0) return new FractionImpl(getNumerator() * -1, getDenominator());
+        return this;
     }
 
     /**
@@ -216,6 +217,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int compareTo(Fraction o) {
+        // TODO
         return 0;
     }
 
