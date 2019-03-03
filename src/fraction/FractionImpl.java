@@ -1,15 +1,14 @@
 package fraction;
 
 public class FractionImpl implements Fraction {
-    //TODO Add instance variables
     private  int numerator;
     private int denominator;
 
-    public int getNumerator() {
+    private int getNumerator() {
         return numerator;
     }
 
-    public int getDenominator() {
+    private int getDenominator() {
         return denominator;
     }
 
@@ -52,7 +51,7 @@ public class FractionImpl implements Fraction {
      * @param fraction the string representation of the fraction
      */
     public FractionImpl(String fraction) throws ArithmeticException, NumberFormatException {
-        // TODO
+        // TODO DONE - need to think about refactoring
         int numerator;
         int denominator;
         if(isWholeNumber(fraction)){
@@ -77,6 +76,7 @@ public class FractionImpl implements Fraction {
                     numerator *= -1;
                     denominator *= -1;
                 }
+                // TODO need to sort out larger and smaller logic - don't think its necessary with MOD version
                 int greatestCommonDivisor = gcd(numerator, denominator);
                 // reduce the numerator and denominator of the fraction
                 numerator /= greatestCommonDivisor;
@@ -86,6 +86,15 @@ public class FractionImpl implements Fraction {
             }
         }
     }
+
+//    public int[] static sortNums(int numerator, int denominator){
+//        // need to place the numbers in correct order for gcd function to work
+//        int[] sortedNums = new int[2];
+//        if(denominator > numerator){
+//            sortedNums[0] =
+//        }
+//        return null;
+//    }
     public static int gcd(int numerator, int denominator){
         if (denominator == 0) {
             return Math.abs(numerator);
@@ -111,6 +120,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction add(Fraction f) {
+        // TODO
         return null;
     }
 
@@ -119,6 +129,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction subtract(Fraction f) {
+        // TODO
         return null;
     }
 
@@ -127,6 +138,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction multiply(Fraction f) {
+        // TODO
         return null;
     }
 
@@ -135,6 +147,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction divide(Fraction f) {
+        // TODO
         return null;
     }
 
@@ -143,6 +156,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction abs() {
+        // TODO
         return null;
     }
 
@@ -151,6 +165,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction negate() {
+        // TODO
         return null;
     }
 
