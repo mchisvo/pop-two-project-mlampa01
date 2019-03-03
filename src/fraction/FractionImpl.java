@@ -163,7 +163,6 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction abs() {
-        // TODO
         if(this.numerator < 0) return new FractionImpl(getNumerator() * -1, getDenominator());
         return this;
     }
@@ -181,6 +180,9 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int hashCode() {
+        // Hashcodes are used to test of objectas are equal.
+        // Equal objects must have the same hascode
+        //TODO little experiment revealed that calling two equal objects has not returned the same hashcode
         return super.hashCode();
     }
 
