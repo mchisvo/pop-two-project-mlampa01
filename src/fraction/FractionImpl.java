@@ -70,8 +70,19 @@ public class FractionImpl implements Fraction {
             if(parts[1].equals("0")){
                 throw new ArithmeticException("Cannot divide by zero!");
             }else{
-                numerator = Integer.parseInt(parts[0]);
-                denominator = Integer.parseInt(parts[1]);
+                numerator = Integer.parseInt(parts[0].trim());
+                denominator = Integer.parseInt(parts[1].trim());
+                // check if denominator is negative, negate both numerator and denominator
+                if(denominator < 0){
+                    numerator *= -1;
+                    denominator *= -1;
+                }
+                int greatestCommonDivisor = gcd(numerator, denominator);
+                // reduce the numerator and denominator of the fraction
+                numerator /= greatestCommonDivisor;
+                denominator /= greatestCommonDivisor;
+                this.numerator = numerator;
+                this.denominator = denominator;
             }
         }
     }

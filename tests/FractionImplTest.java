@@ -68,7 +68,13 @@ public class FractionImplTest {
     @Test
     public void testConstructorWithString(){
         assertEquals("3/4", new FractionImpl("3/4").toString());
-        assertEquals("3/4", new FractionImpl("3/0").toString());
+        //assertEquals("3/4", new FractionImpl("3/0").toString());
+        assertEquals("3/4", new FractionImpl("6/8").toString());
+        //make sure negative denominator is dealt with
+        assertEquals("3/4", new FractionImpl("-6/-8").toString());
+        assertEquals("-3/4", new FractionImpl("6/-8").toString());
+
+
     }
 
     @Test
@@ -85,6 +91,9 @@ public class FractionImplTest {
        assertEquals(2, FractionImpl.gcd(44, 54));
        assertEquals(6, FractionImpl.gcd(30, 36));
        assertEquals(6, FractionImpl.gcd(-36, 30));
+       assertEquals(3, FractionImpl.gcd(3, 3));
+
+
 
 
     }
