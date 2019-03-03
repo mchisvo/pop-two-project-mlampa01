@@ -120,7 +120,6 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction add(Fraction f) {
-        // TODO - WHy are you red? need to CAST - need to use toString, pass it into a constructor kaboom!
         FractionImpl operand = new FractionImpl(f.toString()); // create a new fractionimpl object from the one passed to us
         int num = (operand.getNumerator() * getDenominator()) +(getNumerator() * operand.getDenominator());
         int den = getDenominator() * operand.getDenominator();
@@ -140,8 +139,12 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction multiply(Fraction f) {
-        // TODO
-        return null;
+        FractionImpl operand = new FractionImpl(f.toString());
+        int a = operand.getNumerator();
+        int b = operand.getDenominator();
+        int c = getNumerator();
+        int d = getDenominator();
+        return new FractionImpl((a * c), (b * d));
     }
 
     /**
