@@ -11,14 +11,14 @@ public class FractionImplTest {
     private final Fraction oneFith = new FractionImpl(1,5);
     private final Fraction two = new FractionImpl(2);
 
-    private final Fraction thirteenOverfive = new FractionImpl(13,5);
+    private final FractionImpl thirteenOverfifteen = new FractionImpl(13,15);
     private final Fraction negativeSevenOverFifteen = new FractionImpl(-7,15);
 
 
 
     @Test
     public void add() {
-        assertEquals(thirteenOverfive, twoThirds.add(oneFith));
+        assertEquals(thirteenOverfifteen, twoThirds.add(oneFith));
         assertEquals(negativeSevenOverFifteen, negativeTwoThirds.add(oneFith));
     }
 
