@@ -62,6 +62,8 @@ public class FractionImpl implements Fraction {
                 throw new NumberFormatException(fraction + " is not a number");
             }
             this.numerator = Integer.parseInt(fraction);
+            this.denominator = 1;
+
         }else{
             // We need to split out the numerator and denominator
             // and check id denominator is zero, throw necessary exception.
@@ -138,7 +140,7 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
-    public Fraction multiply(Fraction f) {
+    public Fraction multiply(Fraction f) {// this is converting 5/1 to 5/0
         FractionImpl operand = new FractionImpl(f.toString());
         int a = operand.getNumerator();
         int b = operand.getDenominator();
@@ -152,8 +154,8 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction divide(Fraction f) {
-        // TODO
-        return null;
+        FractionImpl operand = new FractionImpl(f.toString());
+        return this.multiply(operand.inverse());
     }
 
     /**
@@ -206,7 +208,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction inverse() {
-        return null;
+        return new FractionImpl(getDenominator(), getNumerator());
     }
 
     /**

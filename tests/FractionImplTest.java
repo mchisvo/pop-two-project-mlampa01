@@ -9,7 +9,6 @@ public class FractionImplTest {
     private final Fraction twoThirds = new FractionImpl(2,3);
     private final Fraction negativeTwoThirds = new FractionImpl(-2,3);
     private final Fraction oneFith = new FractionImpl(1,5);
-    private final Fraction two = new FractionImpl(2);
 
     private final Fraction thirteenOverfifteen = new FractionImpl(13,15);
     private final Fraction negativeSevenOverFifteen = new FractionImpl(-7,15);
@@ -17,11 +16,6 @@ public class FractionImplTest {
     private final Fraction negativeThirteenOverfifteen = new FractionImpl(-13,15);
     private final Fraction twoOverfifteen = new FractionImpl(2,15);
     private final Fraction negativeTwoOverfifteen = new FractionImpl(-2,15);
-
-
-
-
-
 
     @Test
     public void add() {
@@ -44,7 +38,8 @@ public class FractionImplTest {
 
     @Test
     public void divide() {
-        fail();
+        assertEquals(new FractionImpl(10,3), twoThirds.divide(oneFith));
+        assertEquals(new FractionImpl(-10,3), negativeTwoThirds.divide(oneFith));
     }
 
     @Test
