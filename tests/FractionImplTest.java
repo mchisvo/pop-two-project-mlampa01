@@ -63,6 +63,11 @@ public class FractionImplTest {
         FractionImpl zeroFrac = new FractionImpl("1/0");
     }
 
+    @Test(expected = NumberFormatException.class)
+    public void invalidInputTest(){
+        FractionImpl invalidFrac = new FractionImpl("Abc@");
+    }
+
     @Test
     public void testConstructorWithString(){
         assertEquals("3/4", new FractionImpl("3/4").toString());
