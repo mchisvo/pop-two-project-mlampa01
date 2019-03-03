@@ -180,10 +180,8 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int hashCode() {
-        // Hashcodes are used to test of objectas are equal.
-        // Equal objects must have the same hascode
-        //TODO little experiment revealed that calling two equal objects has not returned the same hashcode
-        return super.hashCode();
+        // use hashcode function on toString to ensure separate but equal objects return the same hashcode.
+        return this.toString().hashCode();
     }
 
     /**
