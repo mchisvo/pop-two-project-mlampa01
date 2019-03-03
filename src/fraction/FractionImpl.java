@@ -132,8 +132,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction subtract(Fraction f) {
-        // TODO
-        return null;
+        return add(f.negate());
     }
 
     /**
@@ -168,8 +167,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction negate() {
-        // TODO
-        return null;
+        return new FractionImpl(-1* getNumerator(), getDenominator());
     }
 
     /**
