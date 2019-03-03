@@ -188,10 +188,8 @@ public class FractionImpl implements Fraction {
         if(this == obj) return true;
         if(!(obj instanceof Fraction)) return false;
         FractionImpl f = new FractionImpl(obj.toString());
-        if(getNumerator() == f.getNumerator() &&
-                getDenominator() == f.getDenominator()){
-            return true;
-        }else return false;
+        return getNumerator() == f.getNumerator() &&
+                getDenominator() == f.getDenominator();
     }
 
     /**
