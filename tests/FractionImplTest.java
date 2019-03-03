@@ -44,7 +44,7 @@ public class FractionImplTest {
 
     @Test
     public void abs() {
-        fail();
+        assertEquals(thirteenOverfifteen, negativeThirteenOverfifteen.abs());
     }
 
     @Test
