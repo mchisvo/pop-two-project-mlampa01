@@ -76,7 +76,9 @@ public class FractionImpl implements Fraction {
         }
     }
     public static int gcd(int numerator, int denominator){
-        return 5;
+        if (denominator == 0) {
+            return Math.abs(numerator);
+        }return gcd(denominator, numerator % denominator);  //divide a by the remainder of a/b
     }
 
     /**Determine whether the number entered is a whole number

@@ -2,12 +2,9 @@ import fraction.FractionImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static fraction.FractionImpl.isWholeNumber;
 import static org.junit.Assert.*;
 
 public class FractionImplTest {
-    private final static String ONE = "1";
-
     @Test
     public void add() {
         fail();
@@ -76,17 +73,19 @@ public class FractionImplTest {
 
     @Test
     public void testIsWholeNumber() {
-        assertTrue(isWholeNumber("1"));
-        assertTrue(isWholeNumber("-100"));
-        assertFalse(isWholeNumber("1/2"));
-        assertFalse(isWholeNumber("-1/2"));
-
+        assertTrue(FractionImpl.isWholeNumber("1"));
+        assertTrue(FractionImpl.isWholeNumber("-100"));
+        assertFalse(FractionImpl.isWholeNumber("1/2"));
+        assertFalse(FractionImpl.isWholeNumber("-1/2"));
     }
 
     @Test
     public void testGCD(){
-       assertEquals("2", FractionImpl.gcd(2, 4));
-       assertEquals("6", FractionImpl.gcd(54, 44));
+       assertEquals(2, FractionImpl.gcd(2, 4));
+       assertEquals(2, FractionImpl.gcd(44, 54));
+       assertEquals(6, FractionImpl.gcd(30, 36));
+       assertEquals(6, FractionImpl.gcd(-36, 30));
+
 
     }
 }
