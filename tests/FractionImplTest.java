@@ -72,7 +72,6 @@ public class FractionImplTest {
     public void testConstructorWithString(){
         assertEquals("3/4", new FractionImpl("3/4").toString());
         assertEquals("3/4", new FractionImpl("3/0").toString());
-
     }
 
     @Test
@@ -81,6 +80,13 @@ public class FractionImplTest {
         assertTrue(isWholeNumber("-100"));
         assertFalse(isWholeNumber("1/2"));
         assertFalse(isWholeNumber("-1/2"));
+
+    }
+
+    @Test
+    public void testGCD(){
+       assertEquals("2", FractionImpl.gcd(2, 4));
+       assertEquals("6", FractionImpl.gcd(54, 44));
 
     }
 }

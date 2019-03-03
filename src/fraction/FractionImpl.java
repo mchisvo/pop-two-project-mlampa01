@@ -75,12 +75,16 @@ public class FractionImpl implements Fraction {
             }
         }
     }
+    public static int gcd(int numerator, int denominator){
+        return 5;
+    }
+
     /**Determine whether the number entered is a whole number
      * @param string
      * @return
      */
     public static boolean isWholeNumber(String string){
-        //break String into char[]
+        //break String into String[]
         String[] parts = string.split("/");
         if(parts.length == 1){
             return true;
