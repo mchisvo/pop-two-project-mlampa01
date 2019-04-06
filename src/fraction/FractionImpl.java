@@ -53,7 +53,6 @@ public class FractionImpl implements Fraction {
      * @param fraction the string representation of the fraction
      */
     public FractionImpl(String fraction) throws ArithmeticException, NumberFormatException {
-        // TODO DONE - need to think about refactoring
         int numerator;
         int denominator;
         if (isWholeNumber(fraction)) {
@@ -80,7 +79,6 @@ public class FractionImpl implements Fraction {
                     numerator *= -1;
                     denominator *= -1;
                 }
-                // TODO need to sort out larger and smaller logic - don't think its necessary with MOD version
                 int greatestCommonDivisor = gcd(numerator, denominator);
                 // reduce the numerator and denominator of the fraction
                 numerator /= greatestCommonDivisor;
@@ -91,21 +89,12 @@ public class FractionImpl implements Fraction {
         }
     }
 
-    //    public int[] static sortNums(int numerator, int denominator){
-//        // need to place the numbers in correct order for gcd function to work
-//        int[] sortedNums = new int[2];
-//        if(denominator > numerator){
-//            sortedNums[0] =
-//        }
-//        return null;
-//    }
     public static int gcd(int numerator, int denominator) {
         if (denominator == 0) {
             return Math.abs(numerator);
         }
         return gcd(denominator, numerator % denominator);  //divide a by the remainder of a/b
     }
-
     /**
      * Determine whether the number entered is a whole number
      *
@@ -120,9 +109,6 @@ public class FractionImpl implements Fraction {
         }
         return false;
     }
-
-    //public static
-
     /**
      * @inheritDoc
      */
@@ -146,7 +132,7 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
-    public Fraction multiply(Fraction f) {// this is converting 5/1 to 5/0
+    public Fraction multiply(Fraction f) {
         FractionImpl operand = new FractionImpl(f.toString());
         int a = operand.getNumerator();
         int b = operand.getDenominator();
@@ -186,8 +172,6 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int hashCode() {
-        // use hashcode function on toString to ensure separate but equal objects return the same hashcode.
-        // toSTring returns a String and strings default hascode method is used on it.
         return this.toString().hashCode();
     }
 
@@ -224,15 +208,13 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int compareTo(Fraction o) {
-        // TODO Found here https://introcs.cs.princeton.edu/java/92symbolic/Rational.java.html
-        // Need to write comments - the side with the highest numerator wins, could convert to a float and test that way too.
+        //  Found here https://introcs.cs.princeton.edu/java/92symbolic/Rational.java.html
         FractionImpl operand = new FractionImpl(o.toString());
         int lhs = getNumerator() * operand.getDenominator();
         int rhs = getDenominator() * operand.getNumerator();
         if (lhs < rhs) return -1;
         if (lhs > rhs) return +1;
         return 0;
-
     }
 
     /**

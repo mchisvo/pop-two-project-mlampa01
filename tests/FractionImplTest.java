@@ -54,24 +54,9 @@ public class FractionImplTest {
     }
 
     @Test
-    public void testHashCode() {
-        //If two objects are equal according to the equals(Object) method, then calling the hashCode()
-        // method on each of the two objects must produce the same value
-        assertEquals(twoThirds.hashCode(), new FractionImpl(2, 3).hashCode());
-    }
-
-//    @Test
-//    public void clone(){
-//        assertEquals(twoThirds.equals(twoThirds.cl));
-//
-//    }
-
-    @Test
     public void testEquals() {
         assertFalse(thirteenOverfifteen.equals(negativeThirteenOverfifteen));
         assertTrue(thirteenOverfifteen.equals(thirteenOverfifteen));
-
-
     }
 
     @Test
